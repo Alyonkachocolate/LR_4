@@ -1,5 +1,5 @@
-#ifndef LR_4_TASC_1_2_H
-#define LR_4_TASC_1_2_H
+#ifndef LR_4_TASK_1_2_H
+#define LR_4_TASK_1_2_H
 #include <array>
 #include <exception>
 #include <iostream>
@@ -9,7 +9,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-bool tasc_1_2() {
+bool task_1_2() {
   cout << "Выберите тип исключения: " << endl;
   cout << "out_of_range - 1, \nlength_error - 2, \ninvalid_argument - 3, "
           "\nbad_cast - 4, \nbad_alloc - 5\n";
@@ -70,20 +70,23 @@ bool tasc_1_2() {
     break;
 
     // std::bad_alloc - выделение памяти через new
+    // тут небольшая проблема с компилятором у мака -
+    // https://sun9-20.userapi.com/c206716/v206716697/e6fce/MIlJfuvBKds.jpg
   case 5:
 
     std::vector<int *> vec;
     try {
       while (true) {
-        vec.push_back(new int[1000000000ul]);
+        vec.push_back(new int[10000000ul]);
       }
 
     } catch (std::bad_alloc &d) {
       cout << d.what() << " - error type std::bad_alloc" << endl;
-      for (auto a : vec) delete[] a;
+      for (auto a : vec)
+        delete[] a;
       return true;
     }
   }
   return false;
 }
-#endif // LR_4_TASC_1_2_H
+#endif // LR_4_TASK_1_2_H
