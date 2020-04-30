@@ -1,5 +1,5 @@
-#ifndef LR_4_TASK_1_2_H
-#define LR_4_TASK_1_2_H
+#ifndef LR_4_TASK_1_3_H
+#define LR_4_TASK_1_3_H
 #include <array>
 #include <exception>
 #include <iostream>
@@ -89,4 +89,4 @@ bool task_1_2() {
   }
   return false;
 }
-#endif // LR_4_TASK_1_2_H
+#endif // LR_4_TASK_1_3_H
